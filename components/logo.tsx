@@ -1,12 +1,20 @@
-export const Logo = () => {
+export const Logo = ({
+  textSize = "text-3xl md:text-5xl",
+  graphicSize = "w-6 h-6 md:w-8 md:h-8",
+  topMargin = "mt-6 md:mt-8"
+}: {
+  textSize?: string;
+  graphicSize?: string;
+  topMargin?: string;
+} = {}) => {
   return (
     <div className="flex items-center -translate-y-2">
-      <span className="font-hina-mincho text-4xl font-normal text-foreground tracking-wide">
-        The h
+      <span className={`font-hina-mincho ${textSize} font-normal text-foreground tracking-wide`}>
+        The H
       </span>
-      <div className="-mx-1 mt-7">
+      <div className={`-mx-1 ${topMargin}`}>
         <svg
-          className="w-6 h-6"
+          className={graphicSize}
           viewBox="0 0 221 295"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +39,7 @@ export const Logo = () => {
           />
         </svg>
       </div>
-      <span className="font-hina-mincho text-4xl font-normal text-primary tracking-wide">
+      <span className={`font-hina-mincho ${textSize} font-normal text-foreground tracking-wide`}>
         usekeeper
       </span>
     </div>

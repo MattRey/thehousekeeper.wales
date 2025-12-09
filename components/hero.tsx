@@ -18,12 +18,13 @@ export function Hero() {
         <div className="h-full sm:h-auto bg-foreground/70 p-8 md:p-12 lg:p-16 flex flex-col justify-center gap-8 text-center md:text-left">
           <div className="flex flex-col justify-center gap-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal tracking-tight text-balance text-background">
-              Refined Hospitality for{" "}
-              <span className="text-accent">Luxury Retreats</span>
+              Outstanding housekeeping and maintenance for{" "}
+              <span className="text-accent">holiday homes in North Wales</span>
             </h1>
             <p className="text-lg md:text-xl font-light text-background max-w-2xl leading-relaxed">
-              Outstanding housekeeping and maintenance for holiday homes in
-              North Wales.
+              The housekeeper delivers outstanding changeover services to the
+              best holiday homes across Anglesey and North Wales. We are the
+              best at what we do... Housekeeping.
             </p>
           </div>
 

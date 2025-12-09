@@ -1,3 +1,4 @@
+import { Logo } from "./logo";
 import { Social } from "./social";
 
 export function Footer() {
@@ -6,7 +7,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid md:grid-cols-4 gap-8 mb-8 pb-8 border-b border-border">
             <div>
-              <h3 className="font-light mb-4 tracking-wide text-primary">The Housekeeper</h3>
+            <Logo textSize="text-2xl" graphicSize="w-5 h-5" topMargin="mt-4" />
               <p className="text-sm font-light text-muted-foreground">
                 Refined hospitality for luxury retreats.
               </p>
