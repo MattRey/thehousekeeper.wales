@@ -16,16 +16,15 @@ export function Hero() {
 
       {/* Content block - right 2/3, overflows bottom of image */}
       <div className="absolute right-0 top-0 bottom-0 md:top-1/2 md:-translate-y-1/5 z-20 w-full md:w-2/3 md:pl-4 md:px-0">
-        <div className="h-full bg-foreground/70 p-8 md:p-12 lg:p-16 flex flex-col justify-center gap-8 text-center md:text-left">
+        <div className="h-full sm:h-auto bg-foreground/70 p-8 md:p-12 lg:p-16 flex flex-col justify-center gap-8 text-center md:text-left">
           <div className="flex flex-col justify-center gap-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal tracking-tight text-balance text-background">
               Refined Hospitality for{" "}
               <span className="text-accent">Luxury Retreats</span>
             </h1>
             <p className="text-lg md:text-xl font-light text-background max-w-2xl leading-relaxed">
-              The housekeeper delivers outstanding changeover services to
-              fantastic holiday homes across Anglesey and North Wales. We are the
-              best at what we do... housekeeping.
+              Outstanding housekeeping and maintenance for holiday homes in
+              North Wales.
             </p>
           </div>
 
