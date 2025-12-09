@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="relative container lg:top-4 min-h-[calc(100vh-92px)]">
+    <section className="relative min-h-[calc(100vh-92px)]">
       {/* Image container with fixed aspect ratio */}
       <div className="relative w-screen sm:w-full h-[calc(100vh-92px)] sm:h-[700px] -mx-4 md:mx-0">
         <Image
@@ -14,8 +14,7 @@ export function Hero() {
         />
       </div>
 
-      {/* Content block - right 2/3, overflows bottom of image */}
-      <div className="absolute right-0 top-0 bottom-0 sm:top-1/2 md:-translate-y-1/5 z-20 w-full sm:w-2/3 md:pl-4 md:px-0">
+      <div className="absolute -left-4 sm:left-auto sm:right-0 top-0 bottom-0 sm:top-1/2 md:-translate-y-1/5 z-20 w-screen sm:w-2/3 md:-mr-4 md:px-0">
         <div className="h-full sm:h-auto bg-foreground/70 p-8 md:p-12 lg:p-16 flex flex-col justify-center gap-8 text-center md:text-left">
           <div className="flex flex-col justify-center gap-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal tracking-tight text-balance text-background">
