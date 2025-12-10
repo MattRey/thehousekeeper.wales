@@ -1,9 +1,10 @@
 import { Hero } from "@/components/hero";
 import { TextBlock } from "@/components/text-block";
+import { PartnersBlock } from "@/components/partners-block";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-8 container">
+    <main className="flex flex-col gap-16 container">
       <Hero />
       <TextBlock>
         <p>
@@ -17,6 +18,7 @@ export default function Home() {
           thorough and professional.
         </p>
       </TextBlock>
+      <PartnersBlock />
       <TextBlock position="right">
         <p>
           The housekeeper offers a one stop service for Cleaning and Property

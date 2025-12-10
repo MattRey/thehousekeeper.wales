@@ -11,12 +11,24 @@ export function TextBlock({
   const isLeft = position === "left";
   return (
     <div
-      className={clsx(
-        "flex flex-col gap-4 w-full sm:w-2/3 text-xl border-accent bg-gray-50 p-4 md:p-16 rounded-sm",
-        {"self-end border-r-2": isRight, "self-start border-l-2": isLeft}
-      )}
+      className={clsx("relative flex w-full sm:w-2/3", {
+        "self-end": isRight,
+        "self-start": isLeft,
+      })}
     >
-      {children}
+      <div
+        className={clsx(
+          "relative flex flex-col gap-4 w-full text-xl bg-gray-50 p-4 md:p-16 z-10"
+        )}
+      >
+        {children}
+      </div>
+      <div className={clsx(
+        "absolute -bottom-2 h-full w-1/2 bg-accent/50 z-[-1]", {
+          "-right-2": isRight,
+          "-left-2": isLeft,
+        })}
+        />
     </div>
   );
 }
