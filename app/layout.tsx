@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`flex flex-col ${roboto.className} ${playFair.variable} ${hina.variable} ${roboto.variable} font-light antialiased`}
+        className={`flex flex-col sm:gap-8 ${roboto.className} ${playFair.variable} ${hina.variable} ${roboto.variable} font-light antialiased`}
       >
         <Header />
         {children}
