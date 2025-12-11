@@ -24,7 +24,7 @@ export function TextBlock({
         {children}
       </div>
       <div className={clsx(
-        "absolute -bottom-2 h-full w-1/2 bg-accent/50 z-[-1]", {
+        "absolute -bottom-3 h-full w-1/2 bg-accent/50 z-[-1]", {
           "-right-2": isRight,
           "-left-2": isLeft,
         })}
