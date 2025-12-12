@@ -21,16 +21,13 @@ export function Header() {
             Services
           </Link>
           <Link href="/about-us" className="hover:text-gray-400">
-            About Us
+            About us
           </Link>
-          <Link href="/our-process" className="hover:text-gray-400">
-            Our Process
+          <Link href="/property-management" className="hover:text-gray-400">
+            Property management
           </Link>
           <Link href="/contact" className="hover:text-gray-400">
-            Contact Us
-          </Link>
-          <Link href="/customer" className="hover:text-gray-400">
-            Customer
+            Contact us
           </Link>
         </nav>
 
@@ -75,19 +72,19 @@ export function Header() {
             href="/about-us"
             className="block hover:text-gray-400 transition"
           >
-            About Us
+            About us
           </Link>
           <Link
-            href="/our-process"
+            href="/property-management"
             className="block hover:text-gray-400 transition"
           >
-            Our Process
+            Property management
           </Link>
           <Link
             href="/contact"
             className="block hover:text-gray-400 transition"
           >
-            Contact Us
+            Contact us
           </Link>
           <Social />
         </nav>
