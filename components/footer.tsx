@@ -5,7 +5,7 @@ import { Social } from "./social";
 export function Footer() {
   return (
     <footer className="w-full bg-background border-t border-border font-sans">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="container px-6 py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-8 pb-8 border-b border-border">
           <div>
             <Logo textSize="text-2xl" graphicSize="w-5 h-5" topMargin="mt-4" />

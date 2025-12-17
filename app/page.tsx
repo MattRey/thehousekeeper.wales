@@ -44,7 +44,7 @@ function HomeHeroActions() {
 }
 export default function Page() {
   return (
-    <main className="flex flex-col gap-16 container">
+    <main className="flex flex-col gap-16 container pb-16">
       <Hero
         image={<HomeHeroImage />}
         title={<HomeHeroTitle />}

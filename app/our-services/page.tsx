@@ -3,15 +3,19 @@ import { TextBlock } from "@/components/text-block";
 
 export default function Page() {
   return (
-    <main className="flex flex-col gap-16 container">
+    <main className="flex flex-col gap-16 container pb-16">
       <Hero
         image={
           <HeroImage
-            src="/images/manadwyn.webp"
+            src="/images/rockside.webp"
             alt="Luxury retreat background"
           />
         }
-        title={<HeroTitle>Our services</HeroTitle>}
+        title={
+          <HeroTitle>
+            Our <span className="text-accent">services</span>
+          </HeroTitle>
+        }
         description={
           <HeroDescription>
             We offer a range of services to meet your needs
