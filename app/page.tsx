@@ -1,11 +1,56 @@
-import { Hero } from "@/components/hero";
+import {
+  Hero,
+  HeroImage,
+  HeroTitle,
+  HeroDescription,
+  HeroActions,
+} from "@/components/hero";
 import { TextBlock } from "@/components/text-block";
 import { PartnersBlock } from "@/components/partners-block";
 
-export default function Home() {
+function HomeHeroImage() {
+  return (
+    <HeroImage src="/images/manadwyn.webp" alt="Luxury retreat background" />
+  );
+}
+function HomeHeroTitle() {
+  return (
+    <HeroTitle>
+      Outstanding housekeeping and maintenance for{" "}
+      <span className="text-accent">holiday homes in North Wales</span>
+    </HeroTitle>
+  );
+}
+function HomeHeroDescription() {
+  return (
+    <HeroDescription>
+      The housekeeper delivers outstanding changeover services to the best
+      holiday lets across Anglesey and North Wales. We are the best at what we
+      do... Housekeeping.
+    </HeroDescription>
+  );
+}
+function HomeHeroActions() {
+  return (
+    <HeroActions>
+      <button className="px-8 py-3 border-2 border-background text-background font-light hover:bg-foreground hover:text-background transition-colors">
+        Our services
+      </button>
+      <button className="px-8 py-3 bg-accent text-foreground font-light hover:opacity-90 transition-opacity">
+        What our customers say
+      </button>
+    </HeroActions>
+  );
+}
+export default function Page() {
   return (
     <main className="flex flex-col gap-16 container">
-      <Hero />
+      <Hero
+        image={<HomeHeroImage />}
+        title={<HomeHeroTitle />}
+        description={<HomeHeroDescription />}
+        actions={<HomeHeroActions />}
+      />
       <TextBlock>
         <p>
           Across Anglesey and Gwynedd the housekeeper has a long standing
