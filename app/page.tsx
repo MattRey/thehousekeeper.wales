@@ -8,6 +8,7 @@ import {
 import { TextBlock } from "@/components/text-block";
 import { PartnersBlock } from "@/components/partners-block";
 import { CustomerReviews } from "@/components/customer-reviews";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -79,12 +80,18 @@ function HomeHeroDescription() {
 function HomeHeroActions() {
   return (
     <HeroActions>
-      <button className="px-8 py-3 border-2 border-background text-background font-light hover:bg-foreground hover:text-background transition-colors">
+      <Link
+        href="/our-services"
+        className="px-8 py-3 border-2 border-background text-background font-light hover:bg-foreground hover:text-background transition-colors"
+      >
         Our services
-      </button>
-      <button className="px-8 py-3 bg-accent text-foreground font-light hover:opacity-90 transition-opacity">
+      </Link>
+      <Link
+        href="#customer-reviews"
+        className="px-8 py-3 bg-accent text-foreground font-light hover:opacity-90 transition-opacity"
+      >
         What our customers say
-      </button>
+      </Link>
     </HeroActions>
   );
 }

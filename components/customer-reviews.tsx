@@ -70,7 +70,7 @@ function ReviewCard({ review }: { review: Review }) {
 
 export function CustomerReviews() {
   return (
-    <section className="w-full">
+    <section className="w-full" id="customer-reviews">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {reviews.map((review, index) => (
           <ReviewCard key={index} review={review} />
