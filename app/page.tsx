@@ -21,22 +21,22 @@ export default function Page() {
       />
       <TextBlock>
         <p>
-          Across Anglesey and Gwynedd the housekeeper has a long standing
-          reputation for managing the changeover day for some of the most
-          prestigious properties in this spectacular part of the world.
+          Across Anglesey and North Wales the housekeeper has a long standing
+          reputation for managing changeover days for holiday lets in this
+          spectacular part of the world.
         </p>
         <p>
-          From the cleaning, linen change, management of maintenance issues
-          right down to ensuring a welcome pack is provided, our service is
-          thorough and professional.
+          From cleaning, linen change, management of maintenance issues right
+          down to ensuring a welcome pack is provided, our service is thorough,
+          professional and friendly.
         </p>
       </TextBlock>
       <PartnersBlock />
       <TextBlock position="right">
         <p>
-          The housekeeper offers a one stop service for Cleaning and Property
-          maintenance to holiday lets. Over the past six years we have handled
-          hundreds of changeover days, always ensuring our outstanding holiday
+          The housekeeper is the complete package for the Cleaning and Property
+          maintenance of holiday lets. Over the past six years we have handled
+          over 8500 changeover days, always ensuring our outstanding holiday
           lets are impeccably finished and ready on time.
         </p>
         <p>
@@ -45,9 +45,9 @@ export default function Page() {
         </p>
         <p>
           Operating across Anglesey and North Wales we are viewed as being the
-          best in our field. Having owned holiday lets before we understand that
-          details matter alongside communication with owners, agencies and
-          guests.
+          best in our field. Having owned holiday lets we understand that
+          details and communication with owners, agencies and guests create an
+          excellent service.
         </p>
       </TextBlock>
       <CustomerReviews />
@@ -57,7 +57,7 @@ export default function Page() {
 
 function HomeHeroImage() {
   return (
-    <HeroImage src="/images/manadwyn.webp" alt="Luxury retreat background" />
+    <HeroImage src="/images/manadwyn.webp" alt="Luxury retreat background" className="object-bottom-left" />
   );
 }
 function HomeHeroTitle() {

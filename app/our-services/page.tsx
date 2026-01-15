@@ -9,6 +9,7 @@ export default function Page() {
           <HeroImage
             src="/images/rockside.webp"
             alt="Luxury retreat background"
+            className="object-bottom-left"
           />
         }
         title={
@@ -22,30 +23,34 @@ export default function Page() {
           </HeroDescription>
         }
       />
+      <p className="text-4xl font-serif">A holiday home has three requirements....</p>
       <TextBlock>
         <h2 className="text-3xl font-serif">Changeover service</h2>
         <p>
-          Our core service is offering a superb changeover service to properties
-          from one bedroom all the way up to twenty. A changeover includes the
-          clean, the laundry, provision of a welcome pack toilet rolls etc.
+          Our primary service is to offer a superb changeover experience to
+          holiday lets ranging from one bedroom all the way up to twenty! A
+          changeover includes the clean, the laundry, provision of a welcome
+          pack, toilet rolls etc..
         </p>
         <p>
-          We report back to the owner or letting agent on any issues with the
-          property and routinely log our feedback form cleaning scores. We also
-          have a property manager who is available to talk through any issues
-          with your property.
+          We report any issues or feedback to owners or letting agents promptly
+          via our unique feedback form.
+        </p>
+        <p>
+          We also have a property manager who is available to talk through any
+          issues with your property.
         </p>
       </TextBlock>
       <TextBlock position="right">
         <h2 className="text-3xl font-serif">Property maintenance</h2>
         <p>
-          Property maintenance is a hand in hand service offered alongside our
-          changeover service and as separate service for owners who dont have a
-          property with us.
+          Property maintenance is offered alongside our changeover service and
+          as a separate service for owners who don&apos;t have a holiday let with us.
         </p>
         <p>
           Any issue reported to our dedicated line, from broken lightbulb to
-          full on flood, will be responded to within the hour.
+          full on flood, will be responded to within the hour either as a
+          resolution or timeframe for resolution.
         </p>
         <p>
           Having been in business for over six years we have a vast list of

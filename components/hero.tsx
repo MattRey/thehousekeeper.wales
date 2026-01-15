@@ -5,6 +5,7 @@ import { ReactNode } from "react";
 interface HeroImageProps {
   src: string;
   alt?: string;
+  className?: string;
 }
 
 interface HeroTitleProps {
@@ -45,14 +46,14 @@ export function Hero({ image, title, description, actions }: HeroProps) {
 }
 
 // Sub-components
-export function HeroImage({ src, alt = "Hero background" }: HeroImageProps) {
+export function HeroImage({ src, alt = "Hero background", className }: HeroImageProps) {
   return (
     <div className="relative w-screen sm:w-full h-[calc(100vh-92px)] sm:h-[700px] -mx-4 md:mx-0">
       <Image
         src={src}
         alt={alt}
         fill
-        className="object-cover object-bottom-left"
+        className={`object-cover ${className}`}
         priority
       />
     </div>
