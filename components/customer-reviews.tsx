@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+
 interface Review {
   name: string;
   comment: string;
@@ -69,8 +73,30 @@ function ReviewCard({ review }: { review: Review }) {
 }
 
 export function CustomerReviews() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            element.classList.add("is-visible");
+            observer.unobserve(element);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
   return (
-    <section className="w-full" id="customer-reviews">
+    <section ref={ref} className="w-full animate-on-scroll" id="customer-reviews">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {reviews.map((review, index) => (
           <ReviewCard key={index} review={review} />

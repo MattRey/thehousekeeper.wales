@@ -3,7 +3,7 @@ import { TextBlock } from "@/components/text-block";
 
 export default function Page() {
   return (
-    <main className="flex flex-col gap-16 container pb-16">
+    <main className="flex flex-col gap-16 md:gap-32 container pb-16">
       <Hero
         image={
           <HeroImage

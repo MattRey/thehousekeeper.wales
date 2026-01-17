@@ -30,10 +30,10 @@ interface HeroProps {
 
 export function Hero({ image, title, description, actions }: HeroProps) {
   return (
-    <section className="relative min-h-[calc(100vh-92px)]">
+    <section className="relative min-h-[calc(100vh-192px)]">
       {image}
-      <div className="absolute -left-4 sm:left-auto sm:right-0 top-0 bottom-0 sm:top-1/2 md:-translate-y-1/5 z-20 w-screen sm:w-2/3 md:-mr-4 md:px-0">
-        <div className="h-full sm:h-auto bg-foreground/70 p-8 md:p-12 lg:p-16 flex flex-col justify-center gap-8 text-center md:text-left">
+      <div className="absolute -left-4 sm:left-auto sm:right-0 top-0 bottom-0 sm:top-1/4 md:-translate-y-1/5 z-20 w-screen sm:w-2/3 md:-mr-4 md:px-0 animate-slide-in-right">
+        <div className="h-full sm:h-auto bg-foreground/70 p-8 md:p-12 lg:p-16 flex flex-col justify-center gap-8 text-center md:text-left md:rounded-tl-4xl">
           <div className="flex flex-col justify-center gap-8">
             {title}
             {description}
@@ -48,12 +48,12 @@ export function Hero({ image, title, description, actions }: HeroProps) {
 // Sub-components
 export function HeroImage({ src, alt = "Hero background", className }: HeroImageProps) {
   return (
-    <div className="relative w-screen sm:w-full h-[calc(100vh-92px)] sm:h-[700px] -mx-4 md:mx-0">
+    <div className="relative w-screen md:rounded-tl-4xl sm:w-full h-[calc(100vh-92px)] sm:h-[700px] -mx-4 md:mx-0 animate-slide-in-left">
       <Image
         src={src}
         alt={alt}
         fill
-        className={`object-cover ${className}`}
+        className={`object-cover md:rounded-tl-4xl ${className}`}
         priority
       />
     </div>
