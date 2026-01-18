@@ -23,9 +23,6 @@ export function Header() {
           <Link href="/about-us" className="hover:text-gray-400">
             About us
           </Link>
-          <Link href="/property-management" className="hover:text-gray-400">
-            Property management
-          </Link>
           <Link href="/contact" className="hover:text-gray-400">
             Contact us
           </Link>
@@ -97,13 +94,6 @@ export function Header() {
             onClick={() => setIsOpen(false)}
           >
             About us
-          </Link>
-          <Link
-            href="/property-management"
-            className="block hover:text-gray-400 transition"
-            onClick={() => setIsOpen(false)}
-          >
-            Property management
           </Link>
           <Link
             href="/contact"

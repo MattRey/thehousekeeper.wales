@@ -10,21 +10,39 @@ interface Review {
 
 const reviews: Review[] = [
   {
-    name: "Sarah W.",
+    name: "Fiona and Emma, Chapel House, Rhosneigr",
     comment:
-      "Absolutely fantastic service! Our holiday home has never looked better. The attention to detail is remarkable and guests always comment on how spotless everything is.",
+      "Finding a reliable and professional changeover service was one of our key concerns' when investing in a holiday let. The housekeeper has been the answer to our prayers. Fantastic service. Thanks Adam and the team...",
     rating: 5,
   },
   {
-    name: "David H.",
+    name: "Lucy and Adam Covell, Rhosneigr",
     comment:
-      "Reliable, professional and thorough. The team goes above and beyond every single time. I wouldn't trust anyone else with our property in Anglesey.",
+      "Adam never fails to pick up his phone and is wholly reliable with numerous contacts to solve any potential problems. His speed of response and efficiency when we had a recent drain problem eased the situation and solved it very quickly and calmly.",
     rating: 5,
   },
   {
-    name: "Emma R.",
+    name: "Neil and Nikki Moulton, Plas Aber, Rhosneigr",
     comment:
-      "The housekeeper has been managing our changeovers for over two years now. Communication is excellent and the quality of work is consistently outstanding.",
+      "Adam and the housekeeper team have been a breath of fresh air, they care about our property and ensure its always in great condition for all our guests and own family. Any maintenance issued are covered in a very timely manner. Highly recommend.",
+    rating: 5,
+  },
+  {
+    name: "Steph and Will, Morlais, Rhosneigr",
+    comment:
+      "Consistent from the start Adam and his team provide a faultless weekly changeover. Nothing is to much trouble, with issues well communicated and guests feedback noted, supported with recommendations to improve, maintain or replace. The housekeeper has also taken the complexity out of our routine maintenance by detailing the requirement and facilitating with local trades teams to ensure the work is carried out quickly and professionally.",
+    rating: 5,
+  },
+  {
+    name: "Ann and Jerry Dunlop, YFelinheli",
+    comment:
+      "Our house has consistently been scored 5 out of 5 for its cleanliness. Adam is very efficient and we are very pleased with the service that he and his company provide.",
+    rating: 5,
+  },
+  {
+    name: "Adam C Rhosneigr",
+    comment:
+      "In only a short period of time, the housekeeper has transformed our ease in managing a second home. From internet issues to major flooding due to blocked drains, they have calmed the clients and fixed the problems with immediate effect.",
     rating: 5,
   },
 ];
@@ -57,7 +75,7 @@ function Stars({ rating }: { rating: number }) {
 
 function ReviewCard({ review }: { review: Review }) {
   return (
-    <div className="relative bg-gray-50 pt-3">
+    <div className="relative bg-gray-50 pt-3 flex">
       {/* Stars positioned on top border */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
         <Stars rating={review.rating} />
@@ -96,7 +114,11 @@ export function CustomerReviews() {
     return () => observer.disconnect();
   }, []);
   return (
-    <section ref={ref} className="w-full animate-on-scroll" id="customer-reviews">
+    <section
+      ref={ref}
+      className="w-full animate-on-scroll"
+      id="customer-reviews"
+    >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {reviews.map((review, index) => (
           <ReviewCard key={index} review={review} />
