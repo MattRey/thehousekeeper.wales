@@ -82,7 +82,7 @@ function ReviewCard({ review }: { review: Review }) {
       </div>
 
       {/* Review card */}
-      <div className="border-2 border-accent p-8 pt-6">
+      <div className="border border-accent p-8 pt-6">
         <h3 className="text-center font-serif text-lg mb-4">{review.name}</h3>
         <p className="text-center leading-relaxed">{review.comment}</p>
       </div>

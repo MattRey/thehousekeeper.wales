@@ -45,7 +45,7 @@ export function TextBlock({
     >
       <div
         className={clsx(
-          "relative flex flex-col gap-4 w-full text-xl bg-gray-50 p-4 md:p-16 z-10 rounded-tl-4xl border-l border-t border-accent"
+          "relative flex flex-col gap-4 w-full text-xl bg-gray-50 p-4 md:p-16 z-10 border-l border-accent"
         )}
       >
         {children}

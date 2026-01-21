@@ -57,7 +57,7 @@ export default function Page() {
 
 function HomeHeroImage() {
   return (
-    <HeroImage src="/images/manadwyn.webp" alt="Luxury retreat background" className="object-bottom-left" />
+    <HeroImage src="/images/image1.webp" alt="Luxury retreat background" className="object-bottom-left" />
   );
 }
 function HomeHeroTitle() {
