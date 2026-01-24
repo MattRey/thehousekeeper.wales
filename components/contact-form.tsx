@@ -45,7 +45,7 @@ export function ContactForm() {
           id="fullName"
           type="text"
           {...register("fullName")}
-          className="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+          className="border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
           placeholder="Enter your full name"
         />
         {errors.fullName && (
@@ -61,7 +61,7 @@ export function ContactForm() {
           id="email"
           type="email"
           {...register("email")}
-          className="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+          className="border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
           placeholder="Enter your email address"
         />
         {errors.email && (
@@ -77,7 +77,7 @@ export function ContactForm() {
           id="phoneNumber"
           type="tel"
           {...register("phoneNumber")}
-          className="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+          className="border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
           placeholder="Enter your phone number (optional)"
         />
         {errors.phoneNumber && (
@@ -93,7 +93,7 @@ export function ContactForm() {
           id="message"
           {...register("message")}
           rows={5}
-          className="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
+          className="border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
           placeholder="Enter your message"
         />
         {errors.message && (
@@ -104,7 +104,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="bg-accent text-foreground font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+        className="bg-foreground text-white font-medium py-3 px-6 rounded-md hover:opacity-60 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isSubmitting ? "Submitting..." : "Submit"}
       </button>
