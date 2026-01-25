@@ -82,13 +82,13 @@ function HomeHeroActions() {
     <HeroActions>
       <Link
         href="/our-services"
-        className="px-8 py-3 border-2 border-background text-background font-light hover:bg-background hover:text-foreground transition-colors"
+        className="px-8 py-3 rounded-md border-2 border-background text-background bg-foreground font-light hover:bg-background hover:text-foreground transition-colors"
       >
         Our services
       </Link>
       <Link
         href="#customer-reviews"
-        className="px-8 py-3 bg-accent text-foreground font-light hover:bg-background hover:text-foreground transition-colors"
+        className="px-8 py-3 rounded-md bg-accent text-foreground font-light hover:bg-background hover:text-foreground transition-colors"
       >
         What our customers say
       </Link>
