@@ -35,6 +35,8 @@ export function ContactForm() {
     resolver: zodResolver(contactFormSchema),
   });
 
+  const [honeypot, setHoneypot] = useState("");
+
   const onSubmit = async (data: ContactFormData) => {
     setSubmitStatus("idle");
     setErrorMessage("");
@@ -43,7 +45,7 @@ export function ContactForm() {
       const response = await fetch("/api/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, website: honeypot }),
       });
 
       if (!response.ok) {
@@ -66,6 +68,20 @@ export function ContactForm() {
       onSubmit={handleSubmit(onSubmit)}
       className="w-full max-w-xl mx-auto flex flex-col gap-6"
     >
+      {/* Honeypot field - hidden from real users, traps bots */}
+      <div className="absolute opacity-0 top-0 left-0 h-0 w-0 -z-10 overflow-hidden" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <div className="flex flex-col gap-2">
         <label htmlFor="fullName" className="font-medium">
           Full Name <span className="text-red-500">*</span>
