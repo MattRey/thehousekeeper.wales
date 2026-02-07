@@ -10,7 +10,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full border-b border-foreground bg-background sticky top-0 z-50">
+    <header className="relative w-full border-b border-foreground bg-background">
       <div className="container pt-6 pb-4 flex items-center justify-between">
         <Link href="/">
           <Logo />
@@ -77,7 +77,7 @@ export function Header() {
       <div className="lg:hidden flex flex-col justify-between">
         <nav
           className={clsx(
-            "absolute top-0 left-0 w-full h-screen flex flex-col items-end gap-6 font-serif text-lg font-light text-primary bg-background mt-22 md:hidden border-t border-border px-6 py-12 space-y-3 transition-transform duration-300",
+            "absolute top-0 z-50 left-0 w-full h-screen flex flex-col items-end gap-6 font-serif text-lg font-light text-primary bg-background mt-22 md:hidden border-t border-border px-6 py-12 space-y-3 transition-transform duration-300",
             isOpen ? "translate-x-0" : "-translate-x-full"
           )}
         >
