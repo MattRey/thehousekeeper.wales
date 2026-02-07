@@ -21,7 +21,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/services"
+                  href="/our-services"
                   className="font-light text-muted-foreground hover:text-primary transition"
                 >
                   Cleaning Services
@@ -29,7 +29,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services"
+                  href="/our-services"
                   className="font-light text-muted-foreground hover:text-primary transition"
                 >
                   Guest Experience
@@ -37,7 +37,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services"
+                  href="/our-services"
                   className="font-light text-muted-foreground hover:text-primary transition"
                 >
                   Property Care
@@ -57,14 +57,6 @@ export function Footer() {
                   className="font-light text-muted-foreground hover:text-primary transition"
                 >
                   About us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/property-management"
-                  className="font-light text-muted-foreground hover:text-primary transition"
-                >
-                  Property management
                 </Link>
               </li>
               <li>
