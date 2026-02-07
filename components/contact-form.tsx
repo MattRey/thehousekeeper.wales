@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -20,16 +21,44 @@ const contactFormSchema = z.object({
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export function ContactForm() {
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
   });
 
-  const onSubmit = (data: ContactFormData) => {
-    console.log("Form submitted:", data);
+  const onSubmit = async (data: ContactFormData) => {
+    setSubmitStatus("idle");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const result = await response.json();
+        throw new Error(result.error || "Something went wrong");
+      }
+
+      setSubmitStatus("success");
+      reset();
+    } catch (err) {
+      setSubmitStatus("error");
+      setErrorMessage(
+        err instanceof Error ? err.message : "Failed to send message. Please try again."
+      );
+    }
   };
 
   return (
@@ -101,12 +130,24 @@ export function ContactForm() {
         )}
       </div>
 
+      {submitStatus === "success" && (
+        <div className="bg-green-50 border border-green-200 text-green-800 rounded-md px-4 py-3">
+          Thank you for your message! We&apos;ll get back to you as soon as possible.
+        </div>
+      )}
+
+      {submitStatus === "error" && (
+        <div className="bg-red-50 border border-red-200 text-red-800 rounded-md px-4 py-3">
+          {errorMessage}
+        </div>
+      )}
+
       <button
         type="submit"
         disabled={isSubmitting}
         className="bg-foreground text-white font-medium py-3 px-6 rounded-md hover:opacity-60 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {isSubmitting ? "Submitting..." : "Submit"}
+        {isSubmitting ? "Sending..." : "Submit"}
       </button>
     </form>
   );
