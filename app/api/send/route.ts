@@ -1,8 +1,8 @@
 import { headers } from "next/headers";
-import { Resend } from "resend";
+import postmark from "postmark";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const client = new postmark.ServerClient(process.env.POSTMARK_API_KEY!);
 
 // --- Rate limiting (in-memory) ---
 const RATE_LIMIT_MAX = 3; // max requests per window
@@ -74,12 +74,12 @@ export async function POST(request: Request) {
       );
     }
 
-    const { data, error } = await resend.emails.send({
-      from: process.env.EMAIL_FROM!,
-      to: [process.env.EMAIL_TO!],
-      replyTo: email,
-      subject: `New contact form message from ${fullName}`,
-      html: `
+    const response = await client.sendEmail({
+      From: process.env.EMAIL_FROM!,
+      To: process.env.EMAIL_TO!,
+      ReplyTo: email,
+      Subject: `New contact form message from ${fullName}`,
+      HtmlBody: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${fullName}</p>
         <p><strong>Email:</strong> ${email}</p>
@@ -88,13 +88,11 @@ export async function POST(request: Request) {
         <p><strong>Message:</strong></p>
         <p>${message.replace(/\n/g, "<br />")}</p>
       `,
+      TextBody: `New Contact Form Submission\n\nName: ${fullName}\nEmail: ${email}${phoneNumber ? `\nPhone: ${phoneNumber}` : ""}\n\nMessage:\n${message}`,
+      MessageStream: "outbound",
     });
 
-    if (error) {
-      return Response.json({ error: error.message }, { status: 500 });
-    }
-
-    return Response.json({ success: true, data });
+    return Response.json({ success: true, messageId: response.MessageID });
   } catch (err) {
     if (err instanceof z.ZodError) {
       return Response.json(
